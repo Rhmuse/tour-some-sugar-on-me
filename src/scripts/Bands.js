@@ -3,14 +3,14 @@ import { getBands } from './database.js'
 export const Bands = () => {
     const bands = getBands();
     let bandsSection = document.querySelector("#bands");
-    let bandListHTML = "<ul>\n"
+    let bandsListHTML = "<ul>\n"
 
     for (const band of bands) {
         const bandListItemHTML = `<li>${band.name}</li>\n`
-        bandListHTML += bandListItemHTML;
+        bandsListHTML += bandListItemHTML;
     }
 
-    bandListHTML += "</ul>"
+    bandsListHTML += "</ul>"
 
     bandsSection.innerHTML = bandListHTML;
 }
