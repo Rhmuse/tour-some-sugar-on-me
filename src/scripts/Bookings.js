@@ -1,8 +1,39 @@
 import { getBands, getBookings, getVenues } from './database.js';
 
+const bookings = getBookings();
+const bands = getBands();
+
+document.addEventListener(
+    "click",
+    e => {
+        let clickedBooking = e.target;
+        if (clickedBooking.id.startsWith("booking")) {
+            const [, bookingPrimaryKey] = clickedBooking.id.split("--")
+
+            let matchingBooking = null;
+            for (const booking of bookings) {
+                if (booking.id === parseInt(bookingPrimaryKey)) {
+                    matchingBooking = booking;
+                    break;
+                }
+            }
+
+            let bookedBand = null;
+            for (const band of bands) {
+                if (band.id === matchingBooking.bandId) {
+                    bookedBand = band;
+                    break;
+                }
+            }
+
+            let alertHTML = `${bookedBand.name}\n${bookedBand.genre}\nFormed in ${bookedBand.established}\n${bookedBand.numberOfMembers} band members`;
+
+            window.alert(alertHTML);
+        }
+    }
+)
+
 export const Bookings = () => {
-    const bookings = getBookings();
-    const bands = getBands();
     const venues = getVenues();
     let bookingsSection = document.querySelector("#bookings");
     let bookingsListHTML = "<ul>\n"
