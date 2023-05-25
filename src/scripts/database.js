@@ -111,6 +111,36 @@ const database = {
             venueId: 5,
             date: "6/20/2023"
         },
+        {
+            id: 6,
+            bandId: 1,
+            venueId: 3,
+            date: "7/8/2023"
+        },
+        {
+            id: 7,
+            bandId: 2,
+            venueId: 4,
+            date: "8/12/2023"
+        },
+        {
+            id: 8,
+            bandId: 3,
+            venueId: 1,
+            date: "9/20/2023"
+        },
+        {
+            id: 9,
+            bandId: 4,
+            venueId: 6,
+            date: "10/5/2023"
+        },
+        {
+            id: 10,
+            bandId: 5,
+            venueId: 2,
+            date: "11/18/2023"
+        }
     ]
 }
 
