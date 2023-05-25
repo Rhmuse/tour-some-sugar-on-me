@@ -6,8 +6,10 @@ import { Venues } from './Venues.js';
 let body = document.querySelector("body");
 
 body.innerHTML = `<section id="bookings">Bookings</section>
+<div class="container">
 <section id="venues">Tour Venues</section>
-<section id="bands"></section>`
+<section id="bands"></section>
+</div>`
 
 //invoke component functions
 Bands();
