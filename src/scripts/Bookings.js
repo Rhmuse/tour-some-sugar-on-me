@@ -25,7 +25,7 @@ export const Bookings = () => {
             }
         }
 
-        const bookingListItemHTML = `<li class="booking--${booking.id}">${bookedBand.name} is playing at ${bookedVenue.name} on ${booking.date}.</li>\n`
+        const bookingListItemHTML = `<li id="booking--${booking.id}">${bookedBand.name} is playing at ${bookedVenue.name} on ${booking.date}.</li>\n`
 
         bookingsListHTML += bookingListItemHTML;
     }

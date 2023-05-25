@@ -6,7 +6,7 @@ export const Bands = () => {
     let bandsListHTML = "<ul>\n"
 
     for (const band of bands) {
-        const bandListItemHTML = `<li class="band--${band.id}">${band.name}</li>\n`
+        const bandListItemHTML = `<li id="band--${band.id}">${band.name}</li>\n`
         bandsListHTML += bandListItemHTML;
     }
 
