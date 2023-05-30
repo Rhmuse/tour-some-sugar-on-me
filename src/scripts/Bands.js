@@ -1,8 +1,9 @@
-import { getBands, getBookings, getVenues } from './database.js'
+import { getArtists, getBands, getBookings, getVenues } from './database.js'
 
 const bands = getBands();
 const venues = getVenues();
 const bookings = getBookings();
+const artists = getArtists();
 
 document.addEventListener(
     "click",
@@ -32,8 +33,14 @@ document.addEventListener(
             }
 
             let alertHTML = "";
+            for (const artist of artists) {
+                if (artist.bandId === matchingBand.id) alertHTML += `${artist.firstName} ${artist.lastName} (${artist.role})\n`
+            }
+
+            alertHTML += "\nUpcomming Shows:\n"
+
             for (const venue of bookedVenues) {
-                alertHTML += `${venue.name} `
+                alertHTML += `${venue.name}\n`
             }
 
             window.alert(alertHTML);
